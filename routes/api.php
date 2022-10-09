@@ -20,5 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::prefix('dir')->group(function () {
+    Route::get('list', [DirectoryController::class, 'index']);
     Route::post('create', [DirectoryController::class, 'createDirectory']);
 });

@@ -25,9 +25,38 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Directory whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Directory whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Directory whereUpdatedAt($value)
- * @mixin \Eloquent
  */
 	class IdeHelperDirectory {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\File
+ *
+ * @property int $id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $expired_at
+ * @property int $user_id
+ * @property int $directory_id
+ * @property string $name
+ * @property string $path
+ * @property int $public_uid
+ * @method static \Illuminate\Database\Eloquent\Builder|File newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|File newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|File query()
+ * @method static \Illuminate\Database\Eloquent\Builder|File whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|File whereDirectoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|File whereExpiredAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|File whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|File whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|File wherePath($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|File wherePublicUid($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|File whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|File whereUserId($value)
+ * @mixin \Eloquent
+ */
+	class IdeHelperFile {}
 }
 
 namespace App\Models{
@@ -58,7 +87,6 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
- * @mixin \Eloquent
  */
 	class IdeHelperUser {}
 }

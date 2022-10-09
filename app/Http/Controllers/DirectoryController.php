@@ -8,6 +8,17 @@ use Illuminate\Http\JsonResponse;
 
 class DirectoryController extends Controller
 {
+
+    /**
+     * Get all directories
+     *
+     * @return JsonResponse
+     */
+    public function index(): JsonResponse
+    {
+        return new JsonResponse(Directory::all());
+    }
+
     /**
      * Creates a new directory and if successful returns it
      *
