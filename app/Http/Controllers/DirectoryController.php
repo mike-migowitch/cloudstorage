@@ -4,19 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DirectoryRequest;
 use App\Models\Directory;
+use Auth;
 use Illuminate\Http\JsonResponse;
 
 class DirectoryController extends Controller
 {
 
     /**
-     * Get all directories
+     * Get all user directories
      *
      * @return JsonResponse
      */
-    public function index(): JsonResponse
+    public function getAllUserDirectories(): JsonResponse
     {
-        return new JsonResponse(Directory::all());
+        return new JsonResponse(Directory::all()->where("user_id", "=", Auth::user()->id));
     }
 
     /**
@@ -28,7 +29,11 @@ class DirectoryController extends Controller
      */
     public function createDirectory(DirectoryRequest $request) : JsonResponse
     {
-        $dir = new Directory(['name' => $request->name]);
+        $dir = new Directory([
+            'name' => $request->name,
+            'user_id' => Auth::user()->id
+        ]);
+
         $dir->saveOrFail();
 
         return new JsonResponse($dir);

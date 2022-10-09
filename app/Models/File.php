@@ -21,4 +21,13 @@ class File extends Model
     {
         return $this->hasOne(Directory::class);
     }
+
+    /**
+     * Get owner
+     * @return HasOne
+     */
+    public function user(): HasOne
+    {
+        return $this->hasOne(User::class);
+    }
 }

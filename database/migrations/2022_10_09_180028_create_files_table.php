@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Directory::class)->constrained()->cascadeOnDelete();
             $table->string('name', 100);
-            $table->string('path');
+            $table->string('filename');
             $table->integer('public_uid');
             $table->unique('public_uid');
 
