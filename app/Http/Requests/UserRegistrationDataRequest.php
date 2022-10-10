@@ -28,7 +28,7 @@ class UserRegistrationDataRequest extends FormRequest
             'gender' => 'required|min:1|max:50',
             'about_me' => 'max:200',
             'email' => 'required|unique:users|email',
-            'password' => 'required|confirmed'
+            'password' => 'required|confirmed|min:6'
         ];
     }
 }
