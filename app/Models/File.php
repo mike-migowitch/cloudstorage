@@ -13,6 +13,15 @@ class File extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'user_id',
+        'expired_at',
+        'directory_id',
+        'filename',
+        'disk_space'
+    ];
+
     /**
      * Get the directory where the file is stored
      * @return HasOne

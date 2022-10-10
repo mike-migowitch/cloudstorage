@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('filename');
             $table->integer('public_uid');
             $table->unique('public_uid');
+            $table->integer('disk_space');
 
         });
     }

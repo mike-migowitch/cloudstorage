@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Auth;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class DirectoryRequest extends FormRequest
 {
@@ -24,7 +26,15 @@ class DirectoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:directories|min:1|max:50'
+            'name' => [
+                'required',
+                'min:1',
+                'max:50',
+                Rule::unique('directories')->where(function ($query) {
+                    $query->where('name', $this->name)
+                        ->where('user_id', Auth::user()->id);
+                })
+            ]
         ];
     }
 }
