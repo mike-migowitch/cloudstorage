@@ -1,0 +1,1201 @@
+{
+    "info": {
+        "_postman_id": "cf191e2c-0b25-4775-98e3-3c8be4c2e1fb",
+        "name": "cloud storage",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "dirs",
+            "item": [
+                {
+                    "name": "list of dirs",
+                    "id": "5bcba54a-819a-4694-8318-ef3950343c2b",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                "type": "text"
+                            }
+                        ],
+                        "url": "http://localhost/api/dir/list"
+                    },
+                    "response": [
+                        {
+                            "id": "3152c23d-a5ee-4860-a136-31ae86faf332",
+                            "name": "list of dirs",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": "http://localhost/api/dir/list"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Host",
+                                    "value": "localhost"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:35:16 GMT"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:35:16 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "close"
+                                },
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "PHP/8.1.11"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "57"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n    \"1\": {\n        \"id\": 2,\n        \"created_at\": \"2022-10-10T10:35:11.000000Z\",\n        \"updated_at\": \"2022-10-10T10:35:11.000000Z\",\n        \"user_id\": 2,\n        \"name\": \"test\"\n    }\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "create dir",
+                    "id": "9d5ff068-c90a-433d-80c2-1add7a4a7ded",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "name",
+                                    "value": "test",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": "http://localhost/api/dir/create"
+                    },
+                    "response": [
+                        {
+                            "id": "6bf905f4-c1af-4012-bd71-d48821aaee0c",
+                            "name": "create dir",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "name",
+                                            "value": "test",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": "http://localhost/api/dir/create"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Host",
+                                    "value": "localhost"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:35:11 GMT"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:35:11 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "close"
+                                },
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "PHP/8.1.11"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "58"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n    \"name\": \"test\",\n    \"user_id\": 2,\n    \"updated_at\": \"2022-10-10T10:35:11.000000Z\",\n    \"created_at\": \"2022-10-10T10:35:11.000000Z\",\n    \"id\": 2\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "directory space usage",
+                    "id": "819da258-2b86-4643-beb5-72e4ced47542",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                "type": "text"
+                            }
+                        ],
+                        "url": "http://localhost/api/dir/2/space"
+                    },
+                    "response": [
+                        {
+                            "id": "7cb55b8b-61b8-45ca-b410-449871f8b8ab",
+                            "name": "directory space usage",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": "http://localhost/api/dir/2/space"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Host",
+                                    "value": "localhost"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:36:46 GMT"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:36:46 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "close"
+                                },
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "PHP/8.1.11"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n    \"test\": 0\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "217fca2d-22a5-459c-80b7-d8329f3661fa"
+        },
+        {
+            "name": "file",
+            "item": [
+                {
+                    "name": "list of files",
+                    "id": "5013cfcb-a2c6-410b-9921-53a648218380",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                "type": "text"
+                            }
+                        ],
+                        "url": "http://localhost/api/file/list"
+                    },
+                    "response": [
+                        {
+                            "id": "ef3e4ab1-c355-4944-96e7-3bba5a57991a",
+                            "name": "list of files",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": "http://localhost/api/file/list"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Host",
+                                    "value": "localhost"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:38:27 GMT"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:38:27 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "close"
+                                },
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "PHP/8.1.11"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "[\n    {\n        \"id\": 2,\n        \"created_at\": \"2022-10-10T10:35:11.000000Z\",\n        \"updated_at\": \"2022-10-10T10:35:11.000000Z\",\n        \"user_id\": 2,\n        \"name\": \"test\",\n        \"files\": []\n    }\n]"
+                        },
+                        {
+                            "id": "963eb4d3-7613-49e9-b736-9d001d0fab80",
+                            "name": "list of files",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": "http://localhost/api/file/list"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Host",
+                                    "value": "localhost"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:41:04 GMT"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:41:04 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "close"
+                                },
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "PHP/8.1.11"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "55"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "[\n    {\n        \"id\": 2,\n        \"created_at\": \"2022-10-10T10:35:11.000000Z\",\n        \"updated_at\": \"2022-10-10T10:35:11.000000Z\",\n        \"user_id\": 2,\n        \"name\": \"test\",\n        \"files\": []\n    },\n    {\n        \"id\": 3,\n        \"created_at\": \"2022-10-10T10:40:37.000000Z\",\n        \"updated_at\": \"2022-10-10T10:40:37.000000Z\",\n        \"user_id\": 2,\n        \"name\": \"root\",\n        \"files\": [\n            {\n                \"id\": 2,\n                \"created_at\": \"2022-10-10T10:40:37.000000Z\",\n                \"updated_at\": \"2022-10-10T10:40:37.000000Z\",\n                \"user_id\": 2,\n                \"directory_id\": 3,\n                \"name\": \"123.jpg\",\n                \"filename\": \"private/PAZSsepBI4GHU4LSgMWpFeyIzFfnOe4BEJobXLLa.jpg\",\n                \"public_uid\": null,\n                \"disk_space\": 33570\n            }\n        ]\n    }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "upload file",
+                    "id": "730483c8-425e-443a-9df9-947a59d12d43",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "file",
+                                    "type": "file",
+                                    "src": "/home/mike/Рабочий стол/123.jpg"
+                                }
+                            ]
+                        },
+                        "url": "http://localhost/api/file/upload"
+                    },
+                    "response": [
+                        {
+                            "id": "7cd8fad9-d152-4a02-a18e-3a4d7ffb812f",
+                            "name": "upload file",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "file",
+                                            "type": "file",
+                                            "src": "/home/mike/Рабочий стол/123.jpg"
+                                        }
+                                    ]
+                                },
+                                "url": "http://localhost/api/file/upload"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Host",
+                                    "value": "localhost"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:40:37 GMT"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:40:37 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "close"
+                                },
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "PHP/8.1.11"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "56"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n    \"status\": \"success\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "rename file",
+                    "id": "f748ac1e-f7ac-44cc-86bc-279ec182fe92",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "name",
+                                    "value": "new",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": "http://localhost/api/file/2/rename"
+                    },
+                    "response": [
+                        {
+                            "id": "aba2ab95-573e-4ece-b599-88e37417eb6b",
+                            "name": "rename file",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                        "type": "text"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "formdata",
+                                    "formdata": [
+                                        {
+                                            "key": "name",
+                                            "value": "new",
+                                            "type": "text"
+                                        }
+                                    ]
+                                },
+                                "url": "http://localhost/api/file/2/rename"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Host",
+                                    "value": "localhost"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:42:32 GMT"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:42:32 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "close"
+                                },
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "PHP/8.1.11"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n    \"status\": \"success\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "download file",
+                    "id": "3591e87a-d51f-44aa-816c-3b5b0fad5638",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                "type": "text"
+                            }
+                        ],
+                        "url": "http://localhost/api/file/2/download"
+                    },
+                    "response": []
+                },
+                {
+                    "name": "make file public",
+                    "id": "62040b0d-b074-4428-a077-2a4444ce8110",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                "description": "Return public link",
+                                "type": "text"
+                            }
+                        ],
+                        "url": "http://localhost/api/file/2/public"
+                    },
+                    "response": [
+                        {
+                            "id": "2d03cb0e-d91d-4aa8-bc14-bcabc102684c",
+                            "name": "make file public",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                        "description": "Return public link",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": "http://localhost/api/file/2/public"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Host",
+                                    "value": "localhost"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:44:47 GMT"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:44:47 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "close"
+                                },
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "PHP/8.1.11"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "\"http://localhost/api/public/1958d5f0-ec9a-428a-bdf1-a278e3cdc536\""
+                        }
+                    ]
+                },
+                {
+                    "name": "delete file",
+                    "id": "8870f222-6416-4c32-8a86-78e4a30aee53",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                "type": "text"
+                            }
+                        ],
+                        "url": "http://localhost/api/file/2/destroy"
+                    },
+                    "response": [
+                        {
+                            "id": "86c758bf-8094-4411-9148-5328ee89e44d",
+                            "name": "delete file",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Authorization",
+                                        "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                        "type": "text"
+                                    }
+                                ],
+                                "url": "http://localhost/api/file/2/destroy"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "header": [
+                                {
+                                    "key": "Host",
+                                    "value": "localhost"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:45:58 GMT"
+                                },
+                                {
+                                    "key": "Date",
+                                    "value": "Mon, 10 Oct 2022 10:45:58 GMT"
+                                },
+                                {
+                                    "key": "Connection",
+                                    "value": "close"
+                                },
+                                {
+                                    "key": "X-Powered-By",
+                                    "value": "PHP/8.1.11"
+                                },
+                                {
+                                    "key": "Cache-Control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                },
+                                {
+                                    "key": "X-RateLimit-Limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "X-RateLimit-Remaining",
+                                    "value": "59"
+                                },
+                                {
+                                    "key": "Access-Control-Allow-Origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "cookie": [],
+                            "body": "{\n    \"status\": \"success\"\n}"
+                        }
+                    ]
+                }
+            ],
+            "id": "1f337644-78d9-4faa-9a7b-5831eae4a9aa"
+        },
+        {
+            "name": "registration",
+            "id": "5341035f-165b-4f4c-8b9c-cab5b33c9816",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "email",
+                            "value": "test@testmail.com",
+                            "description": "String. Must be unique. Required",
+                            "type": "text"
+                        },
+                        {
+                            "key": "password",
+                            "value": "12345678",
+                            "description": "String. Min 6. Required",
+                            "type": "text"
+                        },
+                        {
+                            "key": "password_confirmation",
+                            "value": "12345678",
+                            "description": "String. Required",
+                            "type": "text"
+                        },
+                        {
+                            "key": "name",
+                            "value": "Ivan",
+                            "description": "String. Required. Min 1, Max 50 ",
+                            "type": "text"
+                        },
+                        {
+                            "key": "gender",
+                            "value": "male",
+                            "description": "String. Required. Min 1, Max 50",
+                            "type": "text"
+                        },
+                        {
+                            "key": "about_me",
+                            "value": "Developer",
+                            "description": "About user. Max 200",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": "http://localhost/api/register"
+            },
+            "response": [
+                {
+                    "id": "7f3e5a4d-b1b7-49f3-93af-2a98e6994546",
+                    "name": "registration",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "email",
+                                    "value": "test@testmail.com",
+                                    "description": "String. Must be unique. Required",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "12345678",
+                                    "description": "String. Min 6. Required",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "password_confirmation",
+                                    "value": "12345678",
+                                    "description": "String. Required",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "name",
+                                    "value": "Ivan",
+                                    "description": "String. Required. Min 1, Max 50 ",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "gender",
+                                    "value": "male",
+                                    "description": "String. Required. Min 1, Max 50",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "about_me",
+                                    "value": "Developer",
+                                    "description": "About user. Max 200",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": "http://localhost/api/register"
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Host",
+                            "value": "localhost"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Mon, 10 Oct 2022 10:24:18 GMT"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Mon, 10 Oct 2022 10:24:18 GMT"
+                        },
+                        {
+                            "key": "Connection",
+                            "value": "close"
+                        },
+                        {
+                            "key": "X-Powered-By",
+                            "value": "PHP/8.1.11"
+                        },
+                        {
+                            "key": "Cache-Control",
+                            "value": "no-cache, private"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        },
+                        {
+                            "key": "X-RateLimit-Limit",
+                            "value": "60"
+                        },
+                        {
+                            "key": "X-RateLimit-Remaining",
+                            "value": "59"
+                        },
+                        {
+                            "key": "Access-Control-Allow-Origin",
+                            "value": "*"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "[\n    \"Registration completed successfully\"\n]"
+                }
+            ]
+        },
+        {
+            "name": "login",
+            "id": "cbdc877d-7bbf-42e0-a3e6-e326457e6454",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "email",
+                            "value": "test@testmail.com",
+                            "description": "String. Required",
+                            "type": "text"
+                        },
+                        {
+                            "key": "password",
+                            "value": "12345678",
+                            "description": "String. Required",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": "http://localhost/api/login"
+            },
+            "response": [
+                {
+                    "id": "308f1960-9a41-4237-b4de-275a76182f76",
+                    "name": "login",
+                    "originalRequest": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "email",
+                                    "value": "test@testmail.com",
+                                    "description": "String. Required",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "12345678",
+                                    "description": "String. Required",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": "http://localhost/api/login"
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Host",
+                            "value": "localhost"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Mon, 10 Oct 2022 10:29:38 GMT"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Mon, 10 Oct 2022 10:29:38 GMT"
+                        },
+                        {
+                            "key": "Connection",
+                            "value": "close"
+                        },
+                        {
+                            "key": "X-Powered-By",
+                            "value": "PHP/8.1.11"
+                        },
+                        {
+                            "key": "Cache-Control",
+                            "value": "no-cache, private"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        },
+                        {
+                            "key": "X-RateLimit-Limit",
+                            "value": "60"
+                        },
+                        {
+                            "key": "X-RateLimit-Remaining",
+                            "value": "59"
+                        },
+                        {
+                            "key": "Access-Control-Allow-Origin",
+                            "value": "*"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n    \"token\": \"2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh\"\n}"
+                }
+            ]
+        },
+        {
+            "name": "user info",
+            "id": "b9914093-7433-4c92-b7da-f6a2f9e2db19",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                        "type": "text"
+                    }
+                ],
+                "url": "http://localhost/api/user"
+            },
+            "response": [
+                {
+                    "id": "fefec3b2-7654-4de2-9bba-11ca5d324c77",
+                    "name": "user info",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                "type": "text"
+                            }
+                        ],
+                        "url": "http://localhost/api/user"
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Host",
+                            "value": "localhost"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Mon, 10 Oct 2022 10:31:26 GMT"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Mon, 10 Oct 2022 10:31:26 GMT"
+                        },
+                        {
+                            "key": "Connection",
+                            "value": "close"
+                        },
+                        {
+                            "key": "X-Powered-By",
+                            "value": "PHP/8.1.11"
+                        },
+                        {
+                            "key": "Cache-Control",
+                            "value": "no-cache, private"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        },
+                        {
+                            "key": "X-RateLimit-Limit",
+                            "value": "60"
+                        },
+                        {
+                            "key": "X-RateLimit-Remaining",
+                            "value": "59"
+                        },
+                        {
+                            "key": "Access-Control-Allow-Origin",
+                            "value": "*"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n    \"id\": 2,\n    \"name\": \"Ivan\",\n    \"gender\": \"male\",\n    \"about_me\": \"Developer\",\n    \"email\": \"test@testmail.com\",\n    \"created_at\": \"2022-10-10T10:24:18.000000Z\",\n    \"updated_at\": \"2022-10-10T10:24:18.000000Z\"\n}"
+                }
+            ]
+        },
+        {
+            "name": "disk space usage",
+            "id": "6f63f71a-4402-4824-bc56-81074fd9a644",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                        "type": "text"
+                    }
+                ],
+                "url": "http://localhost/api/disk-usage"
+            },
+            "response": [
+                {
+                    "id": "67884d57-0356-4336-8714-00b7a1979599",
+                    "name": "disk space usage",
+                    "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer 2|zVrY1bdTMisRSdg7nMZxUdNYGCw2U6phFGFWTEbh",
+                                "type": "text"
+                            }
+                        ],
+                        "url": "http://localhost/api/disk-usage"
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "_postman_previewlanguage": "json",
+                    "header": [
+                        {
+                            "key": "Host",
+                            "value": "localhost"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Mon, 10 Oct 2022 10:32:57 GMT"
+                        },
+                        {
+                            "key": "Date",
+                            "value": "Mon, 10 Oct 2022 10:32:57 GMT"
+                        },
+                        {
+                            "key": "Connection",
+                            "value": "close"
+                        },
+                        {
+                            "key": "X-Powered-By",
+                            "value": "PHP/8.1.11"
+                        },
+                        {
+                            "key": "Cache-Control",
+                            "value": "no-cache, private"
+                        },
+                        {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                        },
+                        {
+                            "key": "X-RateLimit-Limit",
+                            "value": "60"
+                        },
+                        {
+                            "key": "X-RateLimit-Remaining",
+                            "value": "59"
+                        },
+                        {
+                            "key": "Access-Control-Allow-Origin",
+                            "value": "*"
+                        }
+                    ],
+                    "cookie": [],
+                    "body": "{\n    \"all files\": 0\n}"
+                }
+            ]
+        }
+    ]
+}
