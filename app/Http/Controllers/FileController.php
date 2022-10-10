@@ -10,7 +10,6 @@ use Auth;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Response;
 use Storage;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
@@ -30,11 +29,17 @@ class FileController extends Controller
      * If the directory name is not passed, then the file will be saved to root
      * If the directory with the given name does not exist, it will be created
      * @param FileRequest $request
-     * @return SuccessJsonResponse
+     * @return JsonResponse
      * @throws \Throwable
      */
-    public function upload(FileRequest $request): SuccessJsonResponse
+    public function upload(FileRequest $request): JsonResponse
     {
+        $file = $request->file('file');
+
+        if (!Auth::user()->isFileFitOnDisk($file->getSize())) {
+            return new JsonResponse([], 400);
+        }
+
         $directoryName = $request->get('directory_name', 'root');
         $directory = Directory::whereName($directoryName)->where('user_id', '=', Auth::user()->id)->firstOrFail();
 
@@ -47,13 +52,11 @@ class FileController extends Controller
             $directory->saveOrFail();
         }
 
-        $file = $request->file('file');
         $path = $file->store('private');
 
         $file = new File([
             'name' => $file->getClientOriginalName(),
             'user_id' => Auth::user()->id,
-            'expired_at' => $request->get('expired_at', null),
             'directory_id' => $directory->id,
             'filename' => $path,
             'disk_space' => $file->getSize()

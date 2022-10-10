@@ -16,6 +16,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    const AVAILABLE_SPACE = 104857600;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -56,5 +58,23 @@ class User extends Authenticatable
     public function files(): HasMany
     {
         return $this->hasMany(File::class);
+    }
+
+    /**
+     * Checks if the user has left disk space
+     * @param int $size
+     * @return bool
+     */
+    public function isFileFitOnDisk(int $size) : bool
+    {
+        $sum = 0;
+
+        foreach ($this->files as $file)
+        {
+            $sum += $file->getDiskSpaceUsage();
+        }
+
+        $diskSpaceLeft = self::AVAILABLE_SPACE - $sum;
+        return $size < $diskSpaceLeft;
     }
 }

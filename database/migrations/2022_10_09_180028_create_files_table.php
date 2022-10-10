@@ -18,7 +18,6 @@ return new class extends Migration
         Schema::create('files', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->dateTime('expired_at')->nullable();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Directory::class)->constrained()->cascadeOnDelete();
             $table->string('name', 100);

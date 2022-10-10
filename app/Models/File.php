@@ -17,7 +17,6 @@ class File extends Model implements DiskObjectInterface
     protected $fillable = [
         'name',
         'user_id',
-        'expired_at',
         'directory_id',
         'filename',
         'disk_space'
