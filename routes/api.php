@@ -24,6 +24,8 @@ Route::get('public/{publicUID}', [FileController::class, 'publicDownload'])->nam
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', [AuthController::class, 'user']);
 
+    Route::get('disk-usage', [FileController::class, 'getAllUserFileDiskSpaceUsage']);
+
     Route::prefix('dir')->group(function () {
         Route::get('list', [DirectoryController::class, 'getAllUserDirectories']);
         Route::get('{directory}/space', [DirectoryController::class, 'getDiskSpaceUsage']);

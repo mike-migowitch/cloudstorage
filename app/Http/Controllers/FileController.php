@@ -150,4 +150,13 @@ class FileController extends Controller
 
         return new JsonResponse(route('public_download', ['publicUID' => $file->public_uid]));
     }
+
+    /**
+     * Returns the size of all user files on the disk
+     * @return JsonResponse
+     */
+    public function getAllUserFileDiskSpaceUsage(): JsonResponse
+    {
+        return new JsonResponse(['all files' => Auth::user()->getAllUserFileDiskSpaceUsage()]);
+    }
 }

@@ -67,6 +67,17 @@ class User extends Authenticatable
      */
     public function isFileFitOnDisk(int $size) : bool
     {
+        $sum = $this->getAllUserFileDiskSpaceUsage();
+        $diskSpaceLeft = self::AVAILABLE_SPACE - $sum;
+        return $size < $diskSpaceLeft;
+    }
+
+    /**
+     * Returns the size of all user files on the disk
+     * @return int
+     */
+    public function getAllUserFileDiskSpaceUsage(): int
+    {
         $sum = 0;
 
         foreach ($this->files as $file)
@@ -74,7 +85,6 @@ class User extends Authenticatable
             $sum += $file->getDiskSpaceUsage();
         }
 
-        $diskSpaceLeft = self::AVAILABLE_SPACE - $sum;
-        return $size < $diskSpaceLeft;
+        return $sum;
     }
 }
