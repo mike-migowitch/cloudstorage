@@ -19,8 +19,13 @@ class Directory extends Model implements DiskObjectInterface
 
     public function getDiskSpaceUsage() : int
     {
-        // TODO логика подсчета
-        return 123;
+        $sum = 0;
+
+        foreach ($this->files as $file) {
+            $sum += $file->getDiskSpaceUsage();
+        }
+
+        return $sum;
     }
 
     /**

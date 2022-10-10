@@ -29,7 +29,11 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::prefix('file')->group(function () {
+        Route::get('list', [FileController::class, 'getAllUserFiles']);
+        Route::get('{file}/destroy', [FileController::class, 'destroy']);
+        Route::get('{file}/download', [FileController::class, 'download']);
         Route::post('upload', [FileController::class, 'upload']);
+        Route::post('{file}/rename', [FileController::class, 'rename']);
     });
 
 });

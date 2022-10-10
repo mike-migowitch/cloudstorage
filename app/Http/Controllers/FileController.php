@@ -2,25 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FileRequest;
+use App\Http\Responses\SuccessJsonResponse;
 use App\Models\Directory;
 use App\Models\File;
 use Auth;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Response;
+use Storage;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class FileController extends Controller
 {
-    public function upload(Request $request)
+    /**
+     * Gets all user files
+     * @return JsonResponse
+     */
+    public function getAllUserFiles(): JsonResponse
     {
-        if (!$request->file()) {
-            return new JsonResponse([], 400);
-        }
+        return new JsonResponse(Directory::with('files')->where("user_id", "=", Auth::user()->id)->get());
+    }
 
-        $file = $request->file('file');
-        $path = $file->store('private');
-
+    /**
+     * Uploading a file to the server
+     * If the directory name is not passed, then the file will be saved to root
+     * If the directory with the given name does not exist, it will be created
+     * @param FileRequest $request
+     * @return SuccessJsonResponse
+     * @throws \Throwable
+     */
+    public function upload(FileRequest $request): SuccessJsonResponse
+    {
         $directoryName = $request->get('directory_name', 'root');
-        $directory = Directory::whereName($directoryName)->where('user_id', '=', Auth::user()->id)->limit(1)->get();
+        $directory = Directory::whereName($directoryName)->where('user_id', '=', Auth::user()->id)->firstOrFail();
 
         if (!$directory) {
             $directory = new Directory([
@@ -30,6 +46,9 @@ class FileController extends Controller
 
             $directory->saveOrFail();
         }
+
+        $file = $request->file('file');
+        $path = $file->store('private');
 
         $file = new File([
             'name' => $file->getClientOriginalName(),
@@ -41,5 +60,60 @@ class FileController extends Controller
         ]);
 
         $file->saveOrFail();
+
+        return new SuccessJsonResponse();
+    }
+
+    /**
+     * Renaming a file
+     * @param File $file
+     * @param Request $request
+     * @return SuccessJsonResponse
+     * @throws AuthorizationException
+     * @throws \Throwable
+     */
+    public function rename(File $file, Request $request): SuccessJsonResponse
+    {
+        $this->authorize('update', $file);
+
+        $file->name = $request->name;
+
+        $file->saveOrFail();
+
+        return new SuccessJsonResponse();
+    }
+
+    /**
+     * Deleting a file
+     * @param File $file
+     * @return SuccessJsonResponse
+     * @throws AuthorizationException
+     * @throws \Throwable
+     */
+    public function destroy(File $file): SuccessJsonResponse
+    {
+        $this->authorize('delete', $file);
+
+        Storage::delete($file->filename);
+        $file->deleteOrFail();
+
+        return new SuccessJsonResponse();
+    }
+
+    /**
+     * Downloading a file
+     * @param File $file
+     * @return JsonResponse|StreamedResponse
+     * @throws AuthorizationException
+     */
+    public function download(File $file): JsonResponse|StreamedResponse
+    {
+        $this->authorize('view', $file);
+
+        if (!Storage::exists($file->filename)) {
+            return new JsonResponse([], 404);
+        }
+
+        return Storage::download($file->filename);
     }
 }

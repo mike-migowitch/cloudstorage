@@ -153,8 +153,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'file' => [
+            'excludephp' => 'Cant upload php',
         ],
     ],
 

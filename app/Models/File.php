@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Interfaces\DiskObjectInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 /**
  * @mixin IdeHelperFile
  */
-class File extends Model
+class File extends Model implements DiskObjectInterface
 {
     use HasFactory;
 
@@ -38,5 +39,10 @@ class File extends Model
     public function user(): HasOne
     {
         return $this->hasOne(User::class);
+    }
+
+    public function getDiskSpaceUsage() : int
+    {
+        return $this->attributes['disk_space'];
     }
 }
