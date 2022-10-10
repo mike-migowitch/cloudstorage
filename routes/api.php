@@ -19,12 +19,14 @@ use Illuminate\Support\Facades\Route;
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
-Route::middleware('auth:sanctum')->group(function () {
+Route::get('public/{publicUID}', [FileController::class, 'publicDownload'])->name('public_download');
 
+Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', [AuthController::class, 'user']);
 
     Route::prefix('dir')->group(function () {
         Route::get('list', [DirectoryController::class, 'getAllUserDirectories']);
+        Route::get('{directory}/space', [DirectoryController::class, 'getDiskSpaceUsage']);
         Route::post('create', [DirectoryController::class, 'createDirectory']);
     });
 
@@ -32,8 +34,8 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('list', [FileController::class, 'getAllUserFiles']);
         Route::get('{file}/destroy', [FileController::class, 'destroy']);
         Route::get('{file}/download', [FileController::class, 'download']);
+        Route::get('{file}/public', [FileController::class, 'generatePublicDownloadUrl']);
         Route::post('upload', [FileController::class, 'upload']);
         Route::post('{file}/rename', [FileController::class, 'rename']);
     });
-
 });

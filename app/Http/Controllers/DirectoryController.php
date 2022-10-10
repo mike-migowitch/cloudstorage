@@ -38,4 +38,16 @@ class DirectoryController extends Controller
 
         return new JsonResponse($dir);
     }
+
+    /**
+     * Returns the disk space occupied by a directory
+     * @param Directory $directory
+     * @return JsonResponse
+     */
+    public function getDiskSpaceUsage(Directory $directory): JsonResponse
+    {
+        $this->authorize('view', $directory);
+
+        return new JsonResponse([$directory->name => $directory->getDiskSpaceUsage()]);
+    }
 }

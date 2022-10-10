@@ -11,6 +11,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Storage;
+use Str;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 
 class FileController extends Controller
@@ -41,7 +42,7 @@ class FileController extends Controller
         }
 
         $directoryName = $request->get('directory_name', 'root');
-        $directory = Directory::whereName($directoryName)->where('user_id', '=', Auth::user()->id)->firstOrFail();
+        $directory = Directory::whereName($directoryName)->where('user_id', '=', Auth::user()->id)->first();
 
         if (!$directory) {
             $directory = new Directory([
@@ -118,5 +119,35 @@ class FileController extends Controller
         }
 
         return Storage::download($file->filename);
+    }
+
+    /**
+     * Downloading a public file
+     * @param string $publicUID
+     * @return JsonResponse|StreamedResponse
+     */
+    public function publicDownload(string $publicUID): JsonResponse|StreamedResponse
+    {
+        $file = File::wherePublicUid($publicUID)->first();
+
+        if (!Storage::exists($file->filename)) {
+            return new JsonResponse([], 404);
+        }
+
+        return Storage::download($file->filename);
+    }
+
+    /**
+     * Generating a public link to download a file
+     * @param File $file
+     * @return JsonResponse
+     * @throws \Throwable
+     */
+    public function generatePublicDownloadUrl(File $file): JsonResponse
+    {
+        $file->public_uid = Str::uuid();
+        $file->saveOrFail();
+
+        return new JsonResponse(route('public_download', ['publicUID' => $file->public_uid]));
     }
 }
